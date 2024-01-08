@@ -1,10 +1,11 @@
 package com.example.project
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-//앙기몯띠
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -12,6 +13,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        val splashIntent = Intent(this, LoadingActivity::class.java) // 스플래쉬 스크린인 loadingActivity 실행
+//        startActivity(splashIntent)
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
