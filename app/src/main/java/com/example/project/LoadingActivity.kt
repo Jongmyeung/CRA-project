@@ -13,10 +13,12 @@ class LoadingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_loading)
 
 
-        val intent = Intent(this, MainActivity::class.java)
+        val intent1 = Intent(this, MainActivity::class.java) // 회원가입 한 경우
+        val intent2 = Intent(this, MainActivity::class.java) // 회원가입 안 한 경우
 
+        // 경우에 따라 화면 이동이 달라짐
         findViewById<View>(android.R.id.content).postDelayed({
-            startActivity(intent)
+            startActivity(intent1)
             finish()
         }, 3000)
     }
