@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.project"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.project"
@@ -18,6 +18,11 @@ android {
     }
 
     buildTypes {
+
+        buildFeatures{
+            viewBinding = true
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
