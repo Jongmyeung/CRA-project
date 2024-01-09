@@ -11,7 +11,7 @@
     android:layout_height="match_parent"
     android:text="Profile Fragment"
     android:textSize="36dp"
-    android:textColor="@color/blue"
+    android:textColor="#673AB7"
     android:gravity="center"/>
 
 </FrameLayout>

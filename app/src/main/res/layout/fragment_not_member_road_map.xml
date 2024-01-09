@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".NotMemberRoadMapFragment">
 
     <!-- TODO: Update blank fragment layout -->
-z
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Home Fragment"
-        android:textColor="@color/blue"
-        android:textSize="36dp" />
+        android:text="RoadMap Fragment"
+        android:textSize="36dp"
+        android:textColor="#EC4612"
+        android:gravity="center"/>
 
 </FrameLayout>

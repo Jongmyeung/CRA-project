@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".NotMemberProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-z
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Home Fragment"
-        android:textColor="@color/blue"
-        android:textSize="36dp" />
+        android:text="no member - Profile Fragment"
+        android:textSize="36dp"
+        android:textColor="#673AB7"
+        android:gravity="center"/>
 
 </FrameLayout>

@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:text="RoadMap Fragment"
         android:textSize="36dp"
-        android:textColor="@color/blue"
+        android:textColor="#EC4612"
         android:gravity="center"/>
 
 </FrameLayout>
