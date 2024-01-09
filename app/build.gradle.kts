@@ -59,4 +59,7 @@ dependencies {
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
+
+    // Add the dependency for the Firebase Authentication library
+    implementation("com.google.firebase:firebase-auth-ktx") // kotlin에 맞춰진 firebase authentication 다루는 코드
 }
