@@ -1,6 +1,7 @@
 package com.example.project
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.project.FirebaseData
@@ -29,28 +30,46 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
+//    private fun signUpUser(name: String, email: String, password: String) {
+//        mAuth.createUserWithEmailAndPassword(email, password)
+//            .addOnCompleteListener(this) { task ->
+//                if (task.isSuccessful) {
+//                    val user = mAuth.currentUser
+//
+//                    // FirebaseData 객체 생성
+//                    val userData = FirebaseData(name, email, password)
+//
+//                    // Firestore에 데이터 추가
+//                    addUserToFirestore(userData)
+//
+//                    // 회원가입 성공 시 수행할 작업
+//                    Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
+//                    // 예: 홈 화면으로 이동
+//                } else {
+//                    // 회원가입 실패 시 오류 처리
+//                    // Toast.makeText(this, "회원가입 실패!", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this, "회원가입 실패 : ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//    }
     private fun signUpUser(name: String, email: String, password: String) {
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    // 성공적으로 가입된 경우
                     val user = mAuth.currentUser
-
-                    // FirebaseData 객체 생성
                     val userData = FirebaseData(name, email, password)
-
-                    // Firestore에 데이터 추가
                     addUserToFirestore(userData)
-
-                    // 회원가입 성공 시 수행할 작업
                     Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
-                    // 예: 홈 화면으로 이동
+                    // 여기에 추가적인 작업 수행
                 } else {
                     // 회원가입 실패 시 오류 처리
-                    // Toast.makeText(this, "회원가입 실패!", Toast.LENGTH_SHORT).show()
                     Toast.makeText(this, "회원가입 실패 : ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    Log.e("SignUpActivity", "회원가입 실패: ${task.exception}")
                 }
             }
     }
+
 
     private fun addUserToFirestore(userData: FirebaseData) {
         val userRef = db.collection("users")
