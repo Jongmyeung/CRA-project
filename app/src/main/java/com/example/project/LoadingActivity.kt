@@ -6,21 +6,25 @@ import android.os.Bundle
 import android.content.Intent
 import android.os.Handler
 import android.view.View
+import com.example.project.databinding.ActivityLoadingBinding
 
 class LoadingActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityLoadingBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_loading)
+        binding = ActivityLoadingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         val intent1 = Intent(this, MainActivity::class.java) // 회원가입 한 경우
-        val intent2 = Intent(this, MainActivity::class.java) // 회원가입 안 한 경우
+        // val intent2 = Intent(this, MainActivity::class.java) // 회원가입 안 한 경우
 
         // 경우에 따라 화면 이동이 달라짐
-        findViewById<View>(android.R.id.content).postDelayed({
+        binding.root.postDelayed({
             startActivity(intent1)
             finish()
         }, 3000)
+
     }
 
     override fun onPause() {
