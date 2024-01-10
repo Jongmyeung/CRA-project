@@ -20,10 +20,10 @@ class MainActivity : AppCompatActivity() {
 //        val splashIntent = Intent(this, LoadingActivity::class.java) // 스플래쉬 스크린인 loadingActivity 실행
 //        startActivity(splashIntent)
 
-        binding.applyBtn.setOnClickListener{
-            val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent) // 화면 전환
-        }
+//        binding.applyBtn.setOnClickListener{
+//            val intent = Intent(this, SignUpActivity::class.java)
+//            startActivity(intent) // 화면 전환
+//        }
 
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
