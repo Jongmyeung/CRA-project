@@ -3,6 +3,7 @@ package com.example.project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.project.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -37,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
             ?.addOnCompleteListener{ task ->
                 if(task.isSuccessful) {
                     // 로그인 성공한 경우
+
                     Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
