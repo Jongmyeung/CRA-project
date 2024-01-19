@@ -61,7 +61,14 @@ class SignUpActivity : AppCompatActivity() {
                     // 성공적으로 가입된 경우
                     val user = mAuth.currentUser
                     val userData = FirebaseData(name, email, password)
-                    addUserToFirestore(userData)
+
+                    // Firebase Authentication에서 생성된 사용자의 UID를 가져옴 왜냐하면 user라는 컬렉션 안의 문서에 userID로 저장하기 위해서
+                    val userId = user?.uid
+                    // userID가 null이 아니어야지 Firestore에 데이터 추가하기
+                    if(userId != null){
+                        addUserToFirestore(userId, userData)
+                    }
+
                     Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
@@ -84,9 +91,9 @@ class SignUpActivity : AppCompatActivity() {
     }
 
 
-    private fun addUserToFirestore(userData: FirebaseData) {
+    private fun addUserToFirestore(userId : String, userData: FirebaseData) {
         val userRef = db.collection("users")
-        userRef.document(userData.Email)
+        userRef.document(userId)// 사용자 UID를 문서 ID로 사용
             .set(userData)
             .addOnSuccessListener {
                 // Firestore에 추가 성공 시 원하는 작업 수행
